@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+
+# Built files (Render builds these itself)
+client/dist/
+dist/
+
+# Secrets: NEVER commit these
+.env
+.env.*
+!.env.example
+
+# Local data file (the sample data is rebuilt from code)
+server/data/db.json
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
