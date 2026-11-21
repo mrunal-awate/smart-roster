@@ -76,13 +76,3 @@ Approval workflow, notifications, alternative-plan comparison, shift timings, lo
 
 ## Approach note (for the email)
 The system separates a process's operating calendar from each employee's schedule. One validator measures coverage per process per day and explains every gap. A simple, explainable generator drafts the roster, and all manual edits and leave changes go through the same validator, which shows the exact impact and suggests backups. Rules are data editable in the UI, so new brands and processes need no code.
-
-## Email (fill the blanks)
-To: ozair.shaikh@datastraw.in, aryan.jaiswal@datastraw.in
-CC: talent@datastraw
-Subject: Smart Roster Management System Assignment - [Your Full Name]
-
-Application URL: [...]
-GitHub Repository: [...]
-LinkedIn Profile: [...]
-Approach note: (paste the approach note above)
