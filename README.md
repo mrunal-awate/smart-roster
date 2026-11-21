@@ -13,10 +13,6 @@ npm start                     # http://localhost:4000  (sample data loads automa
 Live reload while developing: run `npm start` (API) and `cd client && npm run dev` (UI on :5173).
 Optional MongoDB: copy `.env.example`, set `MONGODB_URI`. Without it a local JSON file is used.
 
-## Deploy (Render, free)
-1. Push to GitHub.
-2. Render > New > Blueprint (uses `render.yaml`), or New Web Service with build `npm run build` and start `npm start`.
-3. Add a free MongoDB Atlas database and set `MONGODB_URI`, so data survives restarts.
 
 ## Where the logic lives
 - `server/src/engine/rules.js`: operating calendars, required staff, lookups
@@ -63,16 +59,3 @@ Automated: first-draft roster, all checks, the impact of every change, backup su
 **8. With one more week, what first?**
 Cross-month planning: read the neighbouring month so month-edge weeks and long streaks are exact. Then an approval flow and comparing two alternative rosters, then notifications when a published roster changes, and a fairness report on weekend work.
 
-## Not built
-Approval workflow, notifications, alternative-plan comparison, shift timings, logins, cross-month weeks. The MongoDB store is written but only the JSON-file path was tested.
-
-## Demo video script (3 to 5 minutes)
-1. Setup page: show employees, a brand with one person, a brand with three, and the three calendar types. (45s)
-2. Roster: generate December 2026. Show colours, holidays, Sunday-off brands. (45s)
-3. Brand view, Zest Foods: red coverage cells, read the problem and backup options. Click "Call in" and read the impact box. (60s)
-4. Add a leave for a single-employee brand and watch the new gap appear. Cancel it on Setup > leaves. (45s)
-5. Edit a cell by hand to break a rule and show the instant validation. (30s)
-6. Setup: change a process calendar, regenerate, show the roster change with no code change. Export CSV. (45s)
-
-## Approach note (for the email)
-The system separates a process's operating calendar from each employee's schedule. One validator measures coverage per process per day and explains every gap. A simple, explainable generator drafts the roster, and all manual edits and leave changes go through the same validator, which shows the exact impact and suggests backups. Rules are data editable in the UI, so new brands and processes need no code.
